@@ -13,16 +13,17 @@ function getMovies(searchtext){
         let movies = response.data.Search;
         let output = '';
         $.each(movies, (index, movie) => {
+           
             output += `
-            <div class="col-md-3 ">
-            <div class="well text-center">
-            <img src="${movie.Poster}">
-            <h6>${movie.Title}</h6>
-            <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-dark" href="#">Movie Details</a>
+            <div class="col-md-3" >
+            <div class="well text-center" id="col">
+            <img src="${movie.Poster}" onerror="this.src='./images.jpeg'" class="img-poster">
+            <h6>${movie.Title}</h6> 
+            <a onclick="movieSelected('${movie.imdbID}')" class="btn" href="#">Movie Details</a>
             </div>
             </div>
-            `;
-        });
+            `;}
+        );
 
         $("#movies").html(output);
     })
@@ -63,12 +64,13 @@ function getMovie(){
             </div>
         </div>
         <div class="row">
-            <div class="well">
+            <div class="well-movie-plot">
             <h3>Plot</h3>
                 ${movie.Plot}
-                <hr>
-                <a href="http://imdb.com/title/${movie.imdbID}" target="blank" class="btn btn-dark">View IMDB</a>
-                <a href="index.html" class="btn btn-primary">Back</a>
+                <div class="buttons">
+                <a href="http://imdb.com/title/${movie.imdbID}" target="blank" class="btn btn-movie">View IMDB</a>
+                <a href="index.html" class="btn btn-movie ">Back</a>
+                </div>
                 </div>
         </div>
         `

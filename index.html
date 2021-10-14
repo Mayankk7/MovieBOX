@@ -7,16 +7,35 @@
     <title>MovieBox</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" href="./img.png" type="image/x-icon">
 </head>
+<script>
+    function myFunction() {
+    var element1 = document.getElementById("title");
+    var elementbtn = document.getElementById("btn01");
+    
+    elementbtn.classList.toggle("btn1-dark");
+    element1.classList.toggle("dark-title");
+
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+</script>
 <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="icon">
-                <h1>MovieBOX</h1>
+            
+            <div>
+                <button onclick=myFunction() class="btn1 btn-primary" id="btn01">
+                    <div ><img class="circle" src="./poweroff-removebg-preview.png" alt=""></div>
+                </button>
             </div>
-        </div>
+            <div class="icon">
+                <img class="movie-logo" src="img.png"/>
+                <h1 class="movie-title" id="title">MovieBOX</h1>
+            </div>
+            
     </nav>
-    <hr>
+    
     <div class="container">
         <div class="jumbotron">
             <h3 class="search-text">Search For Any Movie</h3>
@@ -25,6 +44,10 @@
             </form>
         </div>
     </div>
+
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
 
     <div class="container">
         <div id="movies" class="row">
@@ -38,5 +61,15 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/main.js"></script>
 
+    <footer class="footer">
+        <div class="footer-class">
+        </div>
+    </footer>
+
+    <script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
 </body>
 </html>

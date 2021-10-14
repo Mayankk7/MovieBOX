@@ -8,19 +8,38 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
+<script>
+    function myFunction() {
+    
+    var elementbtn = document.getElementById("btn01");
+    elementbtn.classList.toggle("btn1-dark");
+    
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+</script>
 <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="icon">
-                <h1>MovieBOX</h1>
-            </div>
+        <div>
+            <button onclick=myFunction() class="btn1 btn-primary" id="btn01">
+                <div ><img class="circle" src="./poweroff-removebg-preview.png" alt=""></div>
+            </button>
         </div>
     </nav>
 
-    <div class="container">
-        <div id="movie" class="well" class="row">
+    <div class="contain">
+        <div id="movie" class="well-movie" class="row">
         </div>
     </div>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+      </div>
+
+
+    <footer class="footer">
+        <div class="footer-class">
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
@@ -31,5 +50,10 @@
         getMovie();
     </script>
 
+<script>
+    $(window).on("load",function(){
+      $(".loader-wrapper").fadeOut("slow");
+    });
+</script>
 </body>
 </html>
