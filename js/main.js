@@ -6,11 +6,12 @@ $(document).ready( () => {
     });
 });
 
-function getMovies(searchtext){
-    axios.get('http://www.omdbapi.com/?apikey=353b2ee2&s='+searchtext)
+async function getMovies(searchtext){
+    fetch('http://www.omdbapi.com/?apikey=353b2ee2&s='+searchtext)
+    .then((response) => response.json())
     .then((response) => {
         console.log(response);
-        let movies = response.data.Search;
+        let movies = response.Search;
         let output = '';
         $.each(movies, (index, movie) => {
            
@@ -25,8 +26,7 @@ function getMovies(searchtext){
             `;}
         );
 
-        $("#movies").html(output);
-    })
+        $("#movies").html(output);})
     .catch((err) => {
         console.log(err);
         
@@ -41,10 +41,11 @@ function movieSelected(id){
 
 function getMovie(){
     let movieID =sessionStorage.getItem('movieID');
-    axios.get('http://www.omdbapi.com/?apikey=353b2ee2&i='+movieID)
+    fetch('http://www.omdbapi.com/?apikey=353b2ee2&i='+movieID)
+    .then((response) => response.json())
     .then((response) => {
         console.log(response);
-        let movie = response.data;
+        let movie = response;
 
         let output=`
         <div class="row">
@@ -61,6 +62,7 @@ function getMovie(){
                     <li class="list-group-item"><strong>Director : </strong>${movie.Director}</li>
                     <li class="list-group-item"><strong>Writer : </strong>${movie.Writers}</li>
                     <li class="list-group-item"><strong>Actors : </strong>${movie.Actors}</li>
+                    <li class="list-group-item"><strong>RunTime : </strong>${movie.Runtime}</li>
             </div>
         </div>
         <div class="row">
