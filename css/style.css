@@ -145,6 +145,18 @@ img{
     
 }
 
+.list-group{
+    border-radius:20px!important;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    margin-left:10%!important;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.list-group-item{
+    background-color: #28282b!important;
+    border:none!important;
+    border-bottom: dotted white 1px!important;
+}
 .well:hover{
     transform: scale(1.05) ;
     transition: 0.5s ease-in;
@@ -174,13 +186,16 @@ img{
 .thumbnail{
     
     height:40vh;
-    width:30%;
+    padding:0;
+    width:40vw;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin-top:4vh!important;
 }
 
 .thumbnail:hover{
     transform:none;
     transform: scale(1.01);
+    box-shadow: rgb(38, 57, 77) 0px 10px 10px 0px;
 }
 
 .col-md-8{
@@ -275,11 +290,14 @@ img{
 @media (max-width: 768px) {
     #movies .col-md-3 .well{
         height:200px;
-        width:50%!important;
-        margin-left:30%!important;
+        width:60%!important;
+        margin-left:20%!important;
     
     }
 
+    .list-group{
+        margin-left:0!important;
+    }
     .movie-logo{
         display:none
     }
@@ -295,7 +313,9 @@ img{
 
     .contain{
         padding:0!important;
-        height:130%;
+        height:160%!important;
+        margin-left:5%!important;
+        margin-right:5%!important;
     }
 
     .well-movie{
@@ -308,13 +328,20 @@ img{
         
     }
 
+    .col-md-8{
+        margin-bottom:0!important;
+    }
+
     .search-text{
         font-size:30px;
         padding:20px;
         padding-bottom: 50px;
         padding-top: 50px;
     }
-
+    
+    .thumbnail{
+        margin-top:0!important;
+    }
     .form{
         width:60%;
         height:40px;
@@ -329,9 +356,11 @@ img{
     .buttons{
         padding:5px;
     }
+
+    
 }
 
-@media (min-width: 768px) and (max-width:1000px){
+@media (min-width: 768px) and (max-width:1200px){
     .btn{
         width:80%;
     }
@@ -341,6 +370,11 @@ img{
         background:#f2f3f4;
     }
 
+    .thumbnail{
+        height:40vh!important;
+        margin-top:10vh!important;
+        
+    }
     
 }
 
