@@ -7,7 +7,7 @@ $(document).ready( () => {
 });
 
 async function getMovies(searchtext){
-    fetch('http://www.omdbapi.com/?apikey=353b2ee2&s='+searchtext)
+    fetch('https://www.omdbapi.com/?apikey=353b2ee2&s='+searchtext)
     .then((response) => response.json())
     .then((response) => {
         console.log(response);
@@ -41,7 +41,7 @@ function movieSelected(id){
 
 function getMovie(){
     let movieID =sessionStorage.getItem('movieID');
-    fetch('http://www.omdbapi.com/?apikey=353b2ee2&i='+movieID)
+    fetch('https://www.omdbapi.com/?apikey=353b2ee2&i='+movieID)
     .then((response) => response.json())
     .then((response) => {
         console.log(response);
