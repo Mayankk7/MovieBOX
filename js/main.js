@@ -50,7 +50,7 @@ function getMovie(){
         let output=`
         <div class="row">
             <div class="col-md-4">
-                <img src="${movie.Poster}" class="thumbnail">
+                <img src="${movie.Poster}" onerror="this.src='./images.jpeg'" class="thumbnail">
             </div>
             <div class="col-md-8">
                 <h2>${movie.Title}</h2>
